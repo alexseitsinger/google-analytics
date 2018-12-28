@@ -149,17 +149,20 @@ class GoogleAnalytics extends React.Component {
 	}
 	pageviewForLocation = () => {
 		// post analytics for each page view change.
-		const { location } = this.props
-		const path = location.pathname + location.search
-		this.pageview(path)
+		const { isEnvironment, location } = this.props
+		if (isEnvironment) {
+			const path = location.pathname + location.search
+			this.pageview(path)
+		}
 	}
 	initialize = () => {
+		const { isEnvironment } = this.props
 		if (isEnvironment) {
-			// add event listeners for each google analytics method
-			this.addAllListeners()
 			// initialize google analytics service
 			const { id } = this.props
 			ReactGA.initialize(id)
+			// add event listeners for each google analytics method
+			this.addAllListeners()
 		}
 	}
 	render() {
