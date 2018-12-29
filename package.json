@@ -1,6 +1,6 @@
 {
 	"name": "@alexseitsinger/google-analytics",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A react component that uses an event emitter with React-GA to connect to Google Analytics",
 	"main": "dist/main.js",
 	"homepage": "https://github.com/alexseitsinger/google-analytics#readme",
