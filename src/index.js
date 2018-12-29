@@ -7,7 +7,7 @@ class GoogleAnalytics extends React.Component {
 	static propTypes = {
 		location: PropTypes.object.isRequired,
 		isEnvironment: PropTypes.bool.isRequired,
-		id: PropTypes.string.isRequired,
+		trackingId: PropTypes.string.isRequired,
 		emitter: PropTypes.object.isRequired,
 		modalviewEventName: PropTypes.string,
 		pageviewEventName: PropTypes.string,
@@ -159,8 +159,8 @@ class GoogleAnalytics extends React.Component {
 		const { isEnvironment } = this.props
 		if (isEnvironment) {
 			// initialize google analytics service
-			const { id } = this.props
-			ReactGA.initialize(id)
+			const { trackingId } = this.props
+			ReactGA.initialize(trackingId)
 			// add event listeners for each google analytics method
 			this.addAllListeners()
 		}
